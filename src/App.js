@@ -1,6 +1,13 @@
+import {BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
 function App() {
   return (
-    <h1>Dashboard</h1>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/home" element={<Home />}/>
+      </Routes>
+    </Router>
   );
 }
 

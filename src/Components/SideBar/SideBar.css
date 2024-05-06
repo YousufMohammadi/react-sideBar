@@ -1,0 +1,29 @@
+.sideBar-container{
+    width: 250px;
+    min-height: 100vh;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.profile{
+    width: 60px;
+    height: 60px;
+    outline: 3px solid #F25756;
+    outline-offset: 4px;
+}
+.section{
+    letter-spacing: 2px;
+    color: #757575;
+}
+.link{
+    width: 220px !important;
+    height: 30px;
+    text-decoration: none;
+    transition: all 0.5s;
+    padding: 20px 15px ;
+}
+.link:hover{
+    background-color: #408EFD;
+    color: #fff !important;
+}
