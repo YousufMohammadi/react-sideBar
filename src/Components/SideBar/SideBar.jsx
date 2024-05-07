@@ -1,38 +1,75 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../SideBar/SideBar.css"
 import { LuLayoutDashboard } from "react-icons/lu";
 import { GrAnalytics } from "react-icons/gr";
 import { FaRegUser } from "react-icons/fa";
 import { IoFolderOpenOutline,IoNewspaperOutline,IoDocumentTextOutline,IoSettingsOutline  } from "react-icons/io5";
-import { MdOutlineDownloadForOffline } from "react-icons/md";
-
+import { MdOutlineDownloadForOffline,MdOutlineMenuOpen  } from "react-icons/md";
+import Button from '@mui/material/Button';
 
 export default function SideBar() {
+    const [openMenu,setOpenMenu] = useState(true)
+    const handleMenu = () =>{
+        if (openMenu === true) {
+            setOpenMenu(false)
+             const closeButton = document.getElementsByClassName('close');
+             for (let index = 0; index < closeButton.length; index++) {
+                closeButton[index].style.display= 'none'
+             }
+             document.getElementsByClassName('sideBar-container')[0].style.width='120px'
+             const links = document.getElementsByClassName('link');
+             for (let index = 0; index < links.length; index++) {
+                links[index].style.justifyContent= 'center'
+                links[index].style.fontSize= '20px'
+             }
+             document.getElementsByClassName('section')[0].style.textAlign='center' 
+             document.getElementsByClassName('section')[1].style.textAlign='center'
+             document.getElementsByClassName('logo-container')[0].style.justifyContent= 'center'
+             document.getElementsByClassName('profile-container')[0].style.justifyContent= 'center'
+        }
+        else{
+            setOpenMenu(true)
+            const closeButton = document.getElementsByClassName('close');
+             for (let index = 0; index < closeButton.length; index++) {
+                closeButton[index].style.display= 'inline-block'
+             }
+             document.getElementsByClassName('sideBar-container')[0].style.width='250px'
+             const links = document.getElementsByClassName('link');
+             for (let index = 0; index < links.length; index++) {
+                links[index].style.justifyContent= 'flex-start'
+                links[index].style.fontSize= '16px'
+             }
+             document.getElementsByClassName('section')[0].style.textAlign='start'
+             document.getElementsByClassName('section')[1].style.textAlign='start'
+             document.getElementsByClassName('logo-container')[0].style.justifyContent= 'flex-start'
+             document.getElementsByClassName('profile-container')[0].style.justifyContent= 'flex-start'
+
+        }
+    }
+    useEffect(()=>{
+
+    },[setOpenMenu])
   return (
     <aside className='sideBar-container border-end py-2'>
-        <div className="row ps-3 gap-2">
-            <div className="container w-100 mb-4 d-flex flex-row justify-content-start align-items-center">
+        <div className="sidebar-content">
+            <div className="container logo-container w-100 mb-4" onClick={handleMenu}>
             <img src="dashboard.png" alt="logo" className='logo rounded-circle'/>
-            <span className="userName fw-bolder ps-3 fs-3">Ramora</span>
+            {openMenu && <span className="userName fw-bolder fs-3">Ramora</span>}
             </div>
-            <div className="container w-100 mb-4 d-flex flex-row justify-content-start align-items-center">
+            <div className="container profile-container w-100 mb-4">
             <img src="profile.png" alt="profile" className='profile rounded'/>
-            <span className="userName fw-bolder ps-3 fs-4">Yousuf</span>
+            {openMenu && <span className="userName fw-bolder ps-3 fs-4">Yousuf</span>}
             </div>
-            <div className="container mb-1">
-                <span className="section fs-6 fw-bold text-uppercase section">menu</span>
-            </div>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><LuLayoutDashboard  className='me-2'/> Dashboard</a>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><GrAnalytics  className='me-2'/> Compaign</a>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><FaRegUser  className='me-2'/> User</a>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><IoFolderOpenOutline  className='me-2'/> Analytics</a>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><IoNewspaperOutline  className='me-2'/> Billing</a>
-            <div className="container">
-                <span className="section fs-6 fw-bold text-uppercase section">help</span>
-            </div>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><MdOutlineDownloadForOffline  className='me-2'/> Internal Pages</a>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><IoDocumentTextOutline   className='me-2'/> Documentaion</a>
-                <a href="#" className="link w-100 d-flex flex-row justify-content-start align-items-center text-secondary fs-6 fw-bold rounded"><IoSettingsOutline   className='me-2'/> Settings</a>
+                <span className="section fs-6 fw-bold text-uppercase">menu</span>
+                <a href="#" className="link  text-secondary fw-bold rounded"><LuLayoutDashboard  className='me-2'/> <span className='close'>Dashboard</span> </a>
+                <a href="#" className="link  text-secondary fw-bold rounded"><GrAnalytics  className='me-2'/> <span className='close'>Compaign</span></a>
+                <a href="#" className="link  text-secondary fw-bold rounded"><FaRegUser  className='me-2'/> <span className='close'>User</span></a>
+                <a href="#" className="link  text-secondary fw-bold rounded"><IoFolderOpenOutline  className='me-2'/> <span className='close'>Analytics</span></a>
+                <a href="#" className="link  text-secondary fw-bold rounded"><IoNewspaperOutline  className='me-2'/> <span className='close'>Billing</span></a>
+                <span className="section fs-6 fw-bold text-uppercase">help</span>
+                <a href="#" className="link  text-secondary fw-bold rounded"><MdOutlineDownloadForOffline  className='me-2'/> <span className='close'>Internal Pages</span></a>
+                <a href="#" className="link  text-secondary fw-bold rounded"><IoDocumentTextOutline   className='me-2'/> <span className='close'>Documentaion</span></a>
+                <a href="#" className="link  text-secondary fw-bold rounded"><IoSettingsOutline   className='me-2'/> <span className='close'>Settings</span></a>
         </div>
     </aside>
   )

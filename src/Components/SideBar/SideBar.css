@@ -2,9 +2,31 @@
     width: 250px;
     min-height: 100vh;
 }
+.sidebar-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
 .logo{
     width: 30px;
     height: 30px;
+}
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
 }
 .profile{
     width: 60px;
@@ -15,13 +37,19 @@
 .section{
     letter-spacing: 2px;
     color: #757575;
+    width: 90%;
 }
 .link{
-    width: 220px !important;
     height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     text-decoration: none;
-    transition: all 0.5s;
+    transition: all 0.5s !important;
     padding: 20px 15px ;
+    width: 90%;
+    font-size: 16px;
 }
 .link:hover{
     background-color: #408EFD;
