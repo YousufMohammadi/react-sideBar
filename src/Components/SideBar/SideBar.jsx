@@ -3,9 +3,9 @@ import "../SideBar/SideBar.css"
 import { LuLayoutDashboard } from "react-icons/lu";
 import { GrAnalytics } from "react-icons/gr";
 import { FaRegUser } from "react-icons/fa";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 import { IoFolderOpenOutline,IoNewspaperOutline,IoDocumentTextOutline,IoSettingsOutline  } from "react-icons/io5";
-import { MdOutlineDownloadForOffline,MdOutlineMenuOpen  } from "react-icons/md";
-import Button from '@mui/material/Button';
+import { MdOutlineDownloadForOffline  } from "react-icons/md";
 
 export default function SideBar() {
     const [openMenu,setOpenMenu] = useState(true)
@@ -70,6 +70,7 @@ export default function SideBar() {
                 <a href="#" className="link  text-secondary fw-bold rounded"><MdOutlineDownloadForOffline  className='me-2'/> <span className='close'>Internal Pages</span></a>
                 <a href="#" className="link  text-secondary fw-bold rounded"><IoDocumentTextOutline   className='me-2'/> <span className='close'>Documentaion</span></a>
                 <a href="#" className="link  text-secondary fw-bold rounded"><IoSettingsOutline   className='me-2'/> <span className='close'>Settings</span></a>
+                <a href="#" className="link logOut mt-5 text-secondary fw-bold rounded"><RiLogoutCircleRLine   className='me-2'/> <span className='close'>Log Out</span></a>
         </div>
     </aside>
   )

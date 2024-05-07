@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 .logo-container{
     display: flex;
@@ -31,7 +31,7 @@
 .profile{
     width: 60px;
     height: 60px;
-    outline: 3px solid #F25756;
+    outline: 2px solid #F25756;
     outline-offset: 4px;
 }
 .section{
@@ -54,4 +54,7 @@
 .link:hover{
     background-color: #408EFD;
     color: #fff !important;
+}
+.logOut:hover{
+    background-color: #F25756;
 }
