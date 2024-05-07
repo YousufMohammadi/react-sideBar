@@ -21,6 +21,7 @@ export default function SideBar() {
              for (let index = 0; index < links.length; index++) {
                 links[index].style.justifyContent= 'center'
                 links[index].style.fontSize= '20px'
+                links[index].style.width= '50%'
              }
              document.getElementsByClassName('section')[0].style.textAlign='center' 
              document.getElementsByClassName('section')[1].style.textAlign='center'
@@ -38,6 +39,7 @@ export default function SideBar() {
              for (let index = 0; index < links.length; index++) {
                 links[index].style.justifyContent= 'flex-start'
                 links[index].style.fontSize= '16px'
+                links[index].style.width= '90%'
              }
              document.getElementsByClassName('section')[0].style.textAlign='start'
              document.getElementsByClassName('section')[1].style.textAlign='start'
